@@ -8,11 +8,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.5s background-color ease;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.navbar-wagon-brand {
+  color: #3D338B;
+  font-weight: bold;
+    &:hover {
+    opacity: 0.5;
+    text-decoration: none;
+  }
 }
 
 /* User Avatar */
@@ -74,4 +80,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-wagon-white {
+  background-color: white;
 }

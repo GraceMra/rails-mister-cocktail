@@ -1,9 +1,23 @@
 <div class="container">
+<br>
 <h2><%= @cocktail.name %></h2>
+    <ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li>
+        <h5>Ingredient: <%= Ingredient.find(dose.ingredient_id).name %><%= link_to dose_path(dose),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %> <span class="glyphicon glyphicon-trash"></span>
+            <% end %></h5>
+        <h6><%= dose.description %></h6>
+        <br>
+      </li>
+    <% end %>
+    </ul>
+  <%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary ml-2' %>
 
   <hr>
 
-<h3>Edit your cocktail</h3>
+<h3>Edit your cocktail name</h3>
 
   <%= simple_form_for(@cocktail) do |f| %>
     <%=  f.input :name %>
@@ -13,4 +27,5 @@
   <hr>
 
   <%= link_to "< Back to list", cocktails_path %>
+
 </div>
