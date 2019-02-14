@@ -1,0 +1,16 @@
+<div class="container">
+<h2><%= @cocktail.name %></h2>
+
+  <hr>
+    <ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li>
+        <h2><%= dose.description %></h2>
+        <h2><%= Ingredient.find(dose.ingredient_id) %></h2>
+      </li>
+    <% end %>
+    </ul>
+
+  <%= link_to "< Back to list", cocktails_path %>
+
+</div>

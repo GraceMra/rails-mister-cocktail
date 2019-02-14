@@ -1,3 +1,16 @@
 <div class="container">
 <h2><%= @cocktail.name %></h2>
+
+  <hr>
+
+<h3>Edit your cocktail</h3>
+
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%=  f.input :name %>
+
+    <%=  f.submit class: 'btn btn-primary'%>
+    <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>  <% end %>
+  <hr>
+
+  <%= link_to "< Back to list", cocktails_path %>
 </div>

@@ -1,0 +1,13 @@
+<div class="container">
+<h1>Create a new dose</h1>
+<hr>
+  <%= simple_form_for(@dose) do |f| %>
+    <%=  f.input :ingredient %>
+    <%=  f.input :description %>
+    <%=  f.submit class: 'btn btn-primary'%>
+    <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
+  <% end %>
+  <hr>
+
+  <%= link_to "< Back to list", cocktails_path %>
+</div>

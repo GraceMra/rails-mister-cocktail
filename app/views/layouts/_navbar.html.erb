@@ -1,0 +1,30 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  The CocktailR
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="ml-auto flex">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value="">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <a class="list-inline btn btn-outline-primary my-2 my-sm-0 ml-2" href="/cocktails/new">Add a Cocktail</a>
+          </form>
+        </div>
+      </div>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a class="btn btn-outline-primary my-2 my-sm-0 ml-2" href="/cocktails/new">Add a Cocktail</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

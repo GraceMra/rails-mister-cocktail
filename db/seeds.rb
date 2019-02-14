@@ -12,9 +12,8 @@ require 'json'
 user_serialized = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
 ingredient_list = JSON.parse(user_serialized)
 
-ingredient_list.each do |ingredient|
-  ingredient[1].each do |element|
-    Ingredient.create(name: element['strIngredient1'])
+ingredient_list.each do |element|
+  element[1].each do |ingredient|
+    Ingredient.create!(name: ingredient['strIngredient1'])
   end
-  # Ingredient.create(ingredient.to_h)
 end
