@@ -1,6 +1,31 @@
 <div class="container">
+<br>
+<% if @cocktail.photo.present? %>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+<% end %>
 <h2><%= @cocktail.name %></h2>
+    <ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li>
+        <h5>Ingredient: <%= Ingredient.find(dose.ingredient_id).name %><%= link_to dose_path(dose),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %> <span class="glyphicon glyphicon-trash"></span>
+            <% end %></h5>
+        <h6><%= dose.description %></h6>
+        <br>
+      </li>
+    <% end %>
+    </ul>
+  <%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary ml-2' %>
 
+<h3>Edit your cocktail</h3>
+
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit class: 'btn btn-primary'%>
+    <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>  <% end %>
   <hr>
 
   <%= link_to "< Back to list", cocktails_path %>

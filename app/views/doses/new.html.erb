@@ -1,5 +1,6 @@
 <div class="container">
-<h1>Create a new dose</h1>
+<br>
+<h1>Create a new dose of <%= @cocktail.name %></h1>
 <hr>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%=  f.association :ingredient %>
