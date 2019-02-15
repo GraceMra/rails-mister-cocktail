@@ -1,8 +1,14 @@
+
+<div class="home-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path "iqznq7hhopj2oydy3rur", height: 500, width: 1500, crop: :fill %>');">
+  <div class="banner-content">
+    <h1>The CocktailR</h1>
+    <p>Discover and taste the best cocktails</p>
+    <a class="list-inline btn btn btn-primary btn-outline-primary my-2 my-sm-0 ml-2" href="/cocktails/new">Start with a new cocktail</a>
+  </div>
+</div>
+
 <div class="container">
   <br>
-  <h1>List of the cocktails </h1>
-
-  <hr>
     <div class="row">
       <div class="container">
       <% @cocktails.each do |cocktail| %>

@@ -1,11 +1,27 @@
 .home-banner {
-  background-image: url('TODO: A picture URL from unsplash.com!');
-  background-size: cover;
-  height: 100vh;
-  color: #eee;
+  color: white;
   text-align: center;
-  padding-top: 40vh;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.home-banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.home-banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
 .banner {
   text-align: center;
   height: 50%;
